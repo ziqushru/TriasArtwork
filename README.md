@@ -7,8 +7,8 @@
 
 * Database: _MySQL_
 
-* Using https://c9.io server:
+* Using c9.io server:
     * 512 MB RAM
     * 2   GB SSD
 
-* URL: https://photolens-ziqushru.c9users.io/
+* URL: _photolens-ziqushru.c9users.io/_
