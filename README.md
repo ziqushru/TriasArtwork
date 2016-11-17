@@ -1,24 +1,14 @@
-# README
+# Photolens Alpha Site
+###Official site of Photolens corporation developed using Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: _ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]_
 
-Things you may want to cover:
+* Rails version: _Rails 5.0.0.1_
 
-* Ruby version
+* Database: _MySQL_
 
-* System dependencies
+* Using https://c9.io server:
+    * 512 MB RAM
+    * 2   GB SSD
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* URL: https://photolens-ziqushru.c9users.io/
