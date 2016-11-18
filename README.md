@@ -5,7 +5,7 @@
 
 * Rails version: _Rails 5.0.0.1_
 
-* Database: _MySQL_
+* Database: _MySQL 14.14 Distribution 5.5.53_
 
 * Using [c9](https://c9.io) server:
     * 512 MB RAM
