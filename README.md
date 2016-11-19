@@ -1,5 +1,5 @@
 # Photolens Alpha Site
-###Official site of Photolens corporation developed using Ruby on Rails
+###Official website of Photolens corporation developed using Ruby on Rails
 
 * Ruby version: _ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]_
 
@@ -11,4 +11,4 @@
     * 512 MB RAM
     * 2   GB SSD
 
-* URL: _www.photolens-ziqushru.c9users.io/_
+* URL: _www.photolens-ziqushru.c9users.io_

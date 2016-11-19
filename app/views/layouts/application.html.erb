@@ -26,9 +26,15 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <%= link_to "New Post", new_post_path %>
+                        <%= link_to "Contact Us",  info_contact_us_path %>
                     </li>
                     <% if current_user %>
+                    <li>
+                        <%= link_to "Posts", posts_path %>
+                    </li>
+                    <li>
+                        <%= link_to "New Post", new_post_path %>
+                    </li>
                     <li>
                         <%= link_to "Log Out", destroy_user_session_path, method: :delete%>
                     </li>
@@ -50,10 +56,15 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-              <% flash.each do |a, b| %>
-                <div class="alert alert-success"> <%= b %> </div>
-              <% end %>
-              <%= yield %>
+                <% flash.each do |a, b| %>
+                    <div class="alert alert-success"> <%= b %> </div>
+                <% end %>
+                <%= yield %>
+                <br>
+                <br>
+                <br>
+                <hr>
+                <%= render "layouts/footer" %>
             </div>
         </div>
     </div>
