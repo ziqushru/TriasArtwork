@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Photolens</title>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%= link_to "Photolens", root_url, class: "navbar-brand" %>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <% if (request.fullpath == "/christening/gallery") || (request.fullpath == "/christening/services") then %>
+                            <%= link_to "Services", christening_services_path %>
+                        <% elsif (request.fullpath == "/wedding/gallery") || (request.fullpath == "/wedding/services") then %>
+                            <%= link_to "Services", wedding_services_path %>
+                        <% else %>
+                            <%= link_to "Christening Services", christening_services_path %>
+                            </li>
+                            <li>
+                            <%= link_to "Wedding Services", wedding_services_path %>
+                        <% end %>
+                    </li>
+                    <li>
+                        <% if (request.fullpath == "/christening/gallery") || (request.fullpath == "/christening/services") then %>
+                            <%= link_to "Gallery", christening_gallery_path %>
+                        <% elsif (request.fullpath == "/wedding/gallery") || (request.fullpath == "/wedding/services") then %>
+                            <%= link_to "Gallery", wedding_gallery_path %>
+                        <% else %>
+                            <%= link_to "Christening Gallery", christening_gallery_path %>
+                            </li>
+                            <li>
+                            <%= link_to "Wedding Gallery", wedding_gallery_path %>
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to "Bio", info_bio_path %>
+                    </li>
+                    <li>
+                        <%= link_to "Contact Us", info_contact_us_path %>
+                    </li>
+                    <% if current_user %>
+                    <li>
+                        <%= link_to "New Post", new_post_path %>
+                    </li>
+                    <li>
+                        <%= link_to "Log Out", destroy_user_session_path, method: :delete%>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <% flash.each do |a, b| %>
+                    <div class="alert alert-success"> <%= b %> </div>
+                <% end %>

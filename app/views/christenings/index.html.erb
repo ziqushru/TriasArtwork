@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Christenings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @christenings.each do |christening| %>
+      <tr>
+        <td><%= christening.video_id %></td>
+        <td><%= christening.description %></td>
+        <td><%= link_to 'Show', christening %></td>
+        <td><%= link_to 'Edit', edit_christening_path(christening) %></td>
+        <td><%= link_to 'Destroy', christening, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Christening', new_christening_path %>

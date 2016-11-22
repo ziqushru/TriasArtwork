@@ -1,0 +1,2 @@
+module ChristeningsHelper
+end

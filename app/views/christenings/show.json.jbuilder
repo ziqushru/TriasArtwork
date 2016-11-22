@@ -1,0 +1,1 @@
+json.partial! "christenings/christening", christening: @christening

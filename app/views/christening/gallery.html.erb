@@ -1,0 +1,39 @@
+<%= render "layouts/nav_up" %>
+
+<h1><%= @info["title"] %> Gallery</h1>
+<h2><%= @info["description"] %></h2>
+        
+<% $length = 0 %>
+<% @videos.each do |video| %>
+    <% $length += 1 %>
+<% end %>
+<% $rows = ($length / 3) - 1 %>
+<% $columns = 3 - 1 %>
+<% $length -= 1 %>
+
+<div class="table-responsive">
+    <table class="table">
+        <% for i in 0..$rows %>
+        <tr>
+            <% for j in 0..$columns %>
+            <td>
+                <%= link_to image_tag(@videos[j + (i * ($columns + 1))]["thumbnail_large"], size: "280x158"), christening_show_path(:controller => "christening", :action => "show", :video_id => @videos[j + (i * ($columns + 1))]["id"], :description => @videos[j + (i * ($columns + 1))]["description"]) %>
+                <p><%= @videos[j + (i * ($columns + 1))]["description"] %></p>
+            </td>
+            <% end %>
+        </tr>
+        <% end %>
+       
+        <tr>
+            <% j += 1 %>
+            <% for k in j + (i * ($columns + 1))..$length %>
+            <td>
+                <%= link_to image_tag(@videos[k]["thumbnail_large"], size: "280x158"), christening_show_path(:controller => "christening", :action => "show", :video_id => @videos[k]["id"], :description => @videos[k]["description"]) %>
+                <p><%= @videos[j + (i * ($columns + 1))]["description"] %></p>
+            </td>
+            <% end %>
+        </tr>
+    </table>
+</div>
+
+<%= render "layouts/nav_down" %>
