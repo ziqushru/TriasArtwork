@@ -1,7 +1,7 @@
-# Photolens
+# _Photolens_
 ###Official website of Photolens company developed using Ruby on Rails
 
-* Version: 0.2.0
+* Version: _0.2.0_
 
 * Ruby version: _ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]_
 
