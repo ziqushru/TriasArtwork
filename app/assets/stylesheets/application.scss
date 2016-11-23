@@ -15,3 +15,77 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.dropdown-menu-custom
+{
+    @extend .dropdown-menu;
+    background-color: #222222;
+    color: #AAAAAA;
+    font-size: 16px;
+}
+
+.dropdown-menu_item-custom::marker
+{
+    background-color: #222222;
+    color: #AAAAAA;
+    font-size: 16px;
+}
+
+.dropdown-menu_item-custom
+{
+    background-color: #222222;
+    color: #AAAAAA;
+    font-size: 16px;
+}
+
+.dropdown-menu_item-custom span
+{
+    color: #AAAAAA;
+}
+
+.dropdown-menu_item-custom span:after
+{
+    color: #AAAAAA;
+}
+
+.btn-custom-animated
+{ 
+    background-color: #222222;
+    color: #AAAAAA;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.btn-custom-animated:hover
+{
+    color: #FFFFFF;
+    transition-duration: 0.4s;
+}
+
+.btn-custom-animated span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+}
+
+.btn-custom-animated span:after {
+    content: '▾';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 20px;
+    transition: 0.4s;
+}
+
+.btn-custom-animated:hover span {
+    padding-right: 25px;
+}
+
+.btn-custom-animated:hover span:after {
+    opacity: 1;
+    right: 0;
+}

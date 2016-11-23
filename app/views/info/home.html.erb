@@ -12,7 +12,7 @@
             <table class="nav navbar-nav">
                 <tr>
                     <td>
-                        <%= link_to image_tag("1_1365x2048.jpg", size: "480x720"), "christening/gallery" %>
+                        <%= link_to image_tag("1_1365x2048.jpg", size: "480x720"), christening_gallery_path(:controller => "christening", :action => "gallery", :option => "christening") %>
                     </td>
                     <td>
                         <%= link_to image_tag("2_1365x2048.jpg", size: "480x720"), "wedding/gallery" %>

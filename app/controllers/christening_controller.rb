@@ -1,5 +1,6 @@
 class ChristeningController < ApplicationController
   def gallery
+    @option = params[:option]
     @info = Vimeo::Simple::Album.info("4267783")
     @videos = Vimeo::Simple::Album.videos("4267783")
   end

@@ -1,73 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Photolens</title>
-
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
-</head>
-
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="dropdown">
+                <button class="btn btn-custom-animated dropdown-toggle" type="button" data-toggle="dropdown">
+                   <span>Photolens</span>
                 </button>
-                <%= link_to "Photolens", root_url, class: "navbar-brand" %>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <% if (request.fullpath == "/christening/gallery") || (request.fullpath == "/christening/services") then %>
-                            <%= link_to "Services", christening_services_path %>
-                        <% elsif (request.fullpath == "/wedding/gallery") || (request.fullpath == "/wedding/services") then %>
-                            <%= link_to "Services", wedding_services_path %>
-                        <% else %>
-                            <%= link_to "Christening Services", christening_services_path %>
-                            </li>
-                            <li>
-                            <%= link_to "Wedding Services", wedding_services_path %>
-                        <% end %>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-menu_item-custom">
+                        <span><%= link_to "Christenings", christening_gallery_path(:controller => "christening", :action => "gallery", :option => "christening") %></span>
                     </li>
-                    <li>
-                        <% if (request.fullpath == "/christening/gallery") || (request.fullpath == "/christening/services") then %>
-                            <%= link_to "Gallery", christening_gallery_path %>
-                        <% elsif (request.fullpath == "/wedding/gallery") || (request.fullpath == "/wedding/services") then %>
-                            <%= link_to "Gallery", wedding_gallery_path %>
-                        <% else %>
-                            <%= link_to "Christening Gallery", christening_gallery_path %>
-                            </li>
-                            <li>
-                            <%= link_to "Wedding Gallery", wedding_gallery_path %>
-                        <% end %>
+                    <li class="dropdown-menu_item-custom">
+                        <%= link_to "Weddings", wedding_gallery_path(:controller => "wedding", :action => "gallery", :option => "wedding") %>
                     </li>
-                    <li>
-                        <%= link_to "Bio", info_bio_path %>
-                    </li>
-                    <li>
-                        <%= link_to "Contact Us", info_contact_us_path %>
-                    </li>
-                    <% if current_user %>
-                    <li>
-                        <%= link_to "New Post", new_post_path %>
-                    </li>
-                    <li>
-                        <%= link_to "Log Out", destroy_user_session_path, method: :delete%>
-                    </li>
-                    <% end %>
-                </ul>
+                 </ul>
             </div>
         </div>
-    </nav>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <% flash.each do |a, b| %>
-                    <div class="alert alert-success"> <%= b %> </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" style="float: right">
+                <li>
+                    <% if (@option == "christening") then %>
+                        <%= link_to "Gallery", christening_gallery_path %>
+                    <% elsif (@option == "wedding") then %>
+                        <%= link_to "Gallery", wedding_gallery_path %>
+                    <% end %>
+                </li>
+                <li>
+                    <% if (@option == "christening") then %>
+                        <%= link_to "Services", christening_services_path %>
+                    <% elsif (@option == "wedding") then %>
+                        <%= link_to "Services", wedding_services_path %>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to "Bio", info_bio_path %>
+                </li>
+                <li>
+                    <%= link_to "Contact Us", info_contact_us_path %>
+                </li>
+                <% if current_user %>
+                <li>
+                    <%= link_to "New Post", new_post_path %>
+                </li>
+                <li>
+                    <%= link_to "Log Out", destroy_user_session_path, method: :delete%>
+                </li>
                 <% end %>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <% flash.each do |a, b| %>
+                <div class="alert alert-success"> <%= b %> </div>
+            <% end %>
