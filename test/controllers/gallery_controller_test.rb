@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ChristeningTest < ActiveSupport::TestCase
+class GalleryControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

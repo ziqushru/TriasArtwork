@@ -8,47 +8,35 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="dropdown">
-                <button class="btn btn-custom-animated dropdown-toggle" type="button" data-toggle="dropdown">
+                <button class="button_custom_animated dropdown-toggle" type="button" data-toggle="dropdown">
                    <span>Photolens</span>
                 </button>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-menu_item-custom">
-                        <span><%= link_to "Christenings", christening_gallery_path(:controller => "christening", :action => "gallery", :option => "christening") %></span>
-                    </li>
-                    <li class="dropdown-menu_item-custom">
-                        <%= link_to "Weddings", wedding_gallery_path(:controller => "wedding", :action => "gallery", :option => "wedding") %>
-                    </li>
-                 </ul>
+                <div class="dropdown_content">
+                    <%= link_to "Christenings", gallery_showAll_path(:controller => "gallery", :action => "showAll", :option => "christening") %>
+                    <%= link_to "Weddings", gallery_showAll_path(:controller => "gallery", :action => "showAll", :option => "wedding") %>
+                </div>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav" style="float: right">
                 <li>
-                    <% if (@option == "christening") then %>
-                        <%= link_to "Gallery", christening_gallery_path %>
-                    <% elsif (@option == "wedding") then %>
-                        <%= link_to "Gallery", wedding_gallery_path %>
-                    <% end %>
+                    <%= link_to "Gallery", gallery_showAll_path(:controller => "gallery", :action => "showAll", :option => @option) %>
                 </li>
                 <li>
-                    <% if (@option == "christening") then %>
-                        <%= link_to "Services", christening_services_path %>
-                    <% elsif (@option == "wedding") then %>
-                        <%= link_to "Services", wedding_services_path %>
-                    <% end %>
+                    <%= link_to "Services", services_show_path(:controller => "services", :action => "show", :option => @option) %>
                 </li>
                 <li>
-                    <%= link_to "Bio", info_bio_path %>
+                    <%= link_to "Bio", info_bio_path(:controller => "info", :action => "bio", :option => @option) %>
                 </li>
                 <li>
-                    <%= link_to "Contact Us", info_contact_us_path %>
+                    <%= link_to "Contact Us", info_contact_us_path(:controller => "info", :action => "contact_us", :option => @option) %>
                 </li>
                 <% if current_user %>
                 <li>
-                    <%= link_to "New Post", new_post_path %>
+                    <%= link_to "New Post", new_post_path(:controller => "post", :action => "new", :option => @option) %>
                 </li>
                 <li>
-                    <%= link_to "Log Out", destroy_user_session_path, method: :delete%>
+                    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
                 </li>
                 <% end %>
             </ul>

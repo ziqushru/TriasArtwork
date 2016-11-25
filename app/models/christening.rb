@@ -1,2 +1,0 @@
-class Christening < ApplicationRecord
-end

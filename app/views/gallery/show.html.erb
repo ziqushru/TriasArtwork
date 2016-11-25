@@ -1,7 +1,10 @@
 <%= render "layouts/nav_up" %>
 
+<% @info = Vimeo::Simple::Video.info(@video_id)[0] %>
+<h1><%= @info["title"] %></h1>
+<br>
 <iframe src="https://player.vimeo.com/video/<%= @video_id %>" width="640" height="360" frameborder="0" portrait="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <br>
-<p><%= @description %></p>
+<h3><%= @info["description"] %></h3>
 
 <%= render "layouts/nav_down" %>

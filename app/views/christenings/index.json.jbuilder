@@ -1,1 +1,0 @@
-json.array! @christenings, partial: 'christenings/christening', as: :christening
