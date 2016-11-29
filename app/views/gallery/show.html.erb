@@ -6,5 +6,21 @@
 <iframe src="https://player.vimeo.com/video/<%= @video_id %>" width="640" height="360" frameborder="0" portrait="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <br>
 <h3><%= @info["description"] %></h3>
+<br>
+<% if !@images.blank? %>
+    <h3>Images</h3>
+    <% @images.each do |image| %>
+        <div>
+            <%= image.title %>
+            <br>
+            <%= image_tag image.image.url(:medium) %>
+            <br>
+            <%= image.description %>
+            <br>
+            <%= image.video_id %>
+        </div>
+        <br>
+    <% end %>
+<% end %>
 
 <%= render "layouts/nav_down" %>

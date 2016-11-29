@@ -1,0 +1,50 @@
+<%= render "layouts/nav_up" %>
+
+<div>
+    <%= form_for @image, html: { multipart:true } do |form| %>
+        <table class="table_custom">
+            <tr>
+                <td>
+                    <%=  form.label :image_file %>
+                </td>        
+                <td>
+                    <a><%=  form.file_field :image_file %></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%=  form.label :video_id %>
+                </td>        
+                <td>
+                    <%=  form.text_field :video_id %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%=  form.label :title %>
+                </td>        
+                <td>
+                    <%=  form.text_field :title %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%=  form.label :description %>
+                </td>        
+                <td>
+                    <%=  form.text_area :image_file %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= hidden_field_tag :option, @option %>
+                </td>        
+                <td>
+                    <%= form.submit %>
+                </td>
+            </tr>
+        </table>
+    <% end %>
+</div>
+
+<%= render "layouts/nav_down" %>

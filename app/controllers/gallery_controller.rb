@@ -1,5 +1,6 @@
 class GalleryController < ApplicationController
     def showAll
+        @length = params["length"]
         @option = params[:option]
         if @option == "christening"
             @info = Vimeo::Simple::Album.info("4267783")
@@ -16,5 +17,6 @@ class GalleryController < ApplicationController
     def show
         @option = params[:option]
         @video_id = params[:video_id]
+        @images = Image.where(video_id: params[:video_id])
     end
 end

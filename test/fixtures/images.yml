@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  image_file: MyString
+  video_id: MyString
+  title: MyString
   description: MyText
 
 two:
+  image_file: MyString
+  video_id: MyString
+  title: MyString
   description: MyText

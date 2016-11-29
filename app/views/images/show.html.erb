@@ -1,0 +1,16 @@
+<%= render "layouts/nav_up" %>
+
+<% @images.each do |image| %>
+    <div>
+        <%= image.title %>
+        <br>
+        <%= image_tag image.image.url(:medium) %>
+        <br>
+        <%= image.description %>
+        <br>
+        <%= image.video_id %>
+    </div>
+    <br>
+<% end %>
+
+<%= render "layouts/nav_down" %>

@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   
   get 'services/show'
 
-  resources :posts
+  get 'images/showAll'
+  get 'images/show'
+  get 'images/destroy'
+  post 'images/destroy'
+  resources :images
+
   devise_for :users
 end

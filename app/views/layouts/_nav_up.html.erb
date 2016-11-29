@@ -33,7 +33,13 @@
                 </li>
                 <% if current_user %>
                 <li>
-                    <%= link_to "New Post", new_post_path(:controller => "post", :action => "new", :option => @option) %>
+                    <%= link_to "New Image", new_image_path(:controller => "image", :action => "new", :option => @option) %>
+                </li>
+                <li>
+                    <%= link_to "Destroy Image", images_destroy_path(:controller => "image", :action => "destroy", :option => @option) %>
+                </li>
+                <li>
+                    <%= link_to "Show All", images_showAll_path(:controller => "image", :action => "showAll", :option => @option) %>
                 </li>
                 <li>
                     <%= link_to "Log Out", destroy_user_session_path, method: :delete %>

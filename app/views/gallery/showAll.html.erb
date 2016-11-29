@@ -2,14 +2,23 @@
 
 <h1><%= @info["title"] %> Gallery</h1>
 <h2><%= @info["description"] %></h2>
-        
-<% $length = 0 %>
+
+<% $videos_length = 0 %>
 <% @videos.each do |video| %>
-    <% $length += 1 %>
+    <% $videos_length += 1 %>
 <% end %>
-<% $rows = ($length / 3) - 1 %>
+<% if $videos_length < @length.to_i %>
+    <% @length = $videos_length %>
+<% elsif @length.to_i == 0 %>
+    <% @length = $videos_length %>
+<% end %>
+<% $rows = (@length.to_i / 3) - 1 %>
 <% $columns = 3 - 1 %>
-<% $length -= 1 %>
+<% @length = @length.to_i - 1 %>
+<% if $rows < 0 %>
+    <% $rows = 0 %>
+    <% $columns = @length.to_i %>
+<% end %>
 
 <div class="table-responsive" >
     <table class="table">
@@ -29,7 +38,7 @@
         <% end %>
         <tr>
             <% j += 1 %>
-            <% for k in j + (i * ($columns + 1))..$length %>
+            <% for k in j + (i * ($columns + 1))..@length.to_i %>
             <td>
                 <%= link_to image_tag(@videos[k]["thumbnail_large"], size: "280x158"), gallery_show_path(:controller => "gallery", :action => "show", :video_id => @videos[k]["id"], :description => @videos[k]["description"]) %>
                 <p><%= @videos[j + (i * ($columns + 1))]["description"] %></p>

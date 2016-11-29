@@ -1,0 +1,34 @@
+<%= render "layouts/nav_up" %>
+
+<div>
+    <form action="/images/destroy" method="get">
+        <table class="table_custom">
+            <tr>
+                <td>
+                    <b>Video id</b>
+                </td>
+                <td>
+                    <input type="text" name="video_id">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Title</b>
+                </td>
+                <td>
+                    <input type="text" name="title">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="option" value=<%= @option %>>
+                </td>
+                <td>
+                    <input type="submit" value="Destroy">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<%= render "layouts/nav_down" %>
