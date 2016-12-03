@@ -1,7 +1,7 @@
-# _Photolens_
-###Official website of Photolens company developed using Ruby on Rails
+# _TriasArtwork_
+###TriasArtwork webpages for christenings and weddings
 
-* Version: _0.3.2_
+* Version: _0.0.1_
 
 * Ruby version: _ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]_
 
@@ -13,4 +13,4 @@
     * 512 MB RAM
     * 2   GB SSD
 
-* URL: _www.photolens-ziqushru.c9users.io_
+* URL: _www.triasartwork-ziqushru.c9users.io/_
