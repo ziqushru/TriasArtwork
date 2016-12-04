@@ -1,7 +1,7 @@
 # _TriasArtwork_
 ###TriasArtwork webpages for christenings and weddings
 
-* Version: _0.1.0_
+* Version: _0.2.0_
 
 * Ruby version: _ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]_
 
