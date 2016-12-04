@@ -1,27 +1,18 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <table class="nav navbar-nav">
-                <tr>
-                    <td>
-                        <%= link_to image_tag("1_1365x2048.jpg", size: "480x720"), gallery_showAll_path(:controller => "gallery", :action => "showAll", :option => "christening") %>
-                    </td>
-                    <td>
-                        <%= link_to image_tag("2_1365x2048.jpg", size: "480x720"), gallery_showAll_path(:controller => "gallery", :action => "showAll", :option => "wedding") %>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-    <div class="container" style="color: #aaa">
-        <%= render "layouts/footer" %>
-    </div>
-</nav>
+<%= render "layouts/nav_up" %>
+
+<h1>Pellentesque quam tristique turpis massa massa</h1>
+<h3>Vestibulum itaque ut</h3>
+<p>A eget commodo. Est sit eget hendrerit et a sit aliquid et sed tempor vestibulum sed urna pellentesque suspendisse aliquam duis. Duis at nibh in rutrum mattis. Tortor blandit pellentesque. Nam et mi con maecenas montes. Velit risus lectus. Nullam arcu parturient nulla quisque non diam augue pede. Commodo justo consequat.</p>
+
+<button class="info_button_custom">
+    <a href="<%= gallery_showAll_path(:option => "christening") %>">Christenings</a>
+</button>
+<p>In pretium massa. Nec eu in. Erat venenatis lacinia. Nam quam porttitor venenatis enim aliquam lacinia porttitor viverra. Aliquam nulla sed duis scelerisque vitae at proin est turpis pede ac vestibulum rhoncus in. Felis dui ac pellentesque torquent ultrices lacinia mauris molestie. Ea cras condimentum. Enim aut ac. Tortor lacus aliquam rhoncus faucibus quibusdam. Urna justo vel adipiscing egestas aenean. In in nibh. Turpis non iaculis. Nisl purus platea gravida rutrum nunc vestibulum sit mauris nulla ridiculus metus. Amet sed congue metus convallis ligula in sociis magnis eu phasellus in. Sem praesent molestie. Eu lacus ipsum. Ultricies potenti ut. Sodales magna risus aenean pretium et a nullam duis purus ullamcorper pellentesque. Faucibus mi in pellentesque sociis adipiscing.</p>
+
+
+<button class="info_button_custom">
+    <a href="<%= gallery_showAll_path(:option => "christening") %>">Weddings</a>
+</button>
+<p>Vivamus suspendisse massa magna non fusce. In ut aliquam eget pede nullam magna viverra velit. Nibh lorem natoque. Ligula elementum suscipit cursus ut arcu dignissim metus est. Lacus lectus consectetuer. Consectetuer nec ad ante wisi risus. In urna et et accumsan sit vestibulum libero sed in risus pretium. Volutpat libero orci pretium orci nullam. Turpis mattis pulvinar purus id eu. Tempus praesent elit. Dui pellentesque dolor. Massa est lectus metus viverra mauris. Ullamcorper magna eleifend amet elementum eros. Sociis sit pellentesque nec ut lacus. A tincidunt dictum posuere malesuada eget. Massa in vestibulum venenatis donec ultricies libero ac commodo massa nulla gravida. Molestie suspendisse magnis. Enim praesent etiam. Fringilla nibh dui.</p>
+
+<%= render "layouts/nav_down" %>

@@ -1,4 +1,8 @@
 class GalleryController < ApplicationController
+    def about
+        @option = params[:option]
+    end
+    
     def showAll
         @length = params["length"]
         @option = params[:option]
